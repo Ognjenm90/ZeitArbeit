@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitArbeit.NewTime" BackgroundColor="#404040">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label Text="Gesamte Arbeitszeit:"
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
+               HorizontalTextAlignment="Center" TextColor="Gray" />
+            <Label Text="Anfangszeit" TextColor="Gray" />
+            <DatePicker  TextColor="Gray"  x:Name="DatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30" />
+            <TimePicker TextColor="Gray" x:Name="startTimePicker"
+                    Margin="30, 0, 0, 30"
+                    PropertyChanged="OnTimeSelected"/>
+
+
+
+            <Label Text="Endzeit:" TextColor="Gray"/>
+         
+            <TimePicker TextColor="Gray" x:Name="endTimePicker"
+                    Margin="30, 0, 0, 30"
+                    PropertyChanged="OnTimeSelected"/>
+
+
+            <Button Text="Sichern" Image="baseline_check_black_24.png" Clicked="Button_Clicked">
+              
+
+
+
+
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
+
+           

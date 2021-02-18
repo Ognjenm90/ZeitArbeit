@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxGrid1="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v18.2"
+           
+             x:Class="ZeitArbeit.List" BackgroundColor="#404040">
+    <StackLayout>
+    
+        <Button x:Name="button" Image="baseline_keyboard_backspace_black_36.png" Clicked="Button_Clicked" Text="Startseite"> </Button>
+      
+        <Grid x:Name="grid1">
+
+            <dxGrid1:GridControl x:Name="grid"  RowTap="Grid_RowTap"  ItemsSource="{Binding saveData}">
+
+                <dxGrid1:GridControl.Columns DisplayFormat="d">
+
+
+                    <dxGrid1:NumberColumn FieldName="Tag" />
+                <dxGrid1:TextColumn FieldName="Zeit" Caption="Zeit" Width="170" />
+                <dxGrid1:DateColumn FieldName="Datum" DisplayFormat="d"/>
+                <dxGrid1:DateColumn FieldName="Monat" DisplayFormat="d" 
+                            IsGrouped="true" GroupInterval="DateMonth"/>
+                
+            </dxGrid1:GridControl.Columns>
+
+            <dxGrid1:GridControl.GroupSummaries>
+                <dxGrid1:GridColumnSummary FieldName="Stunden"  Type="Sum" />
+            </dxGrid1:GridControl.GroupSummaries>
+
+         
+
+        </dxGrid1:GridControl>
+    </Grid>
+       
+    </StackLayout>
+</ContentPage>
